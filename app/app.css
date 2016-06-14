@@ -37,6 +37,17 @@ body {
 }
 
 /* Calculator */
+.calculator {
+}
+
+.calculator__enter {
+  font-size: 15px;
+}
+
+.calculator__enter:hover {
+  font-size: 14px;
+}
+
 .result {
   text-align: right;
   margin: 5px;
@@ -55,17 +66,6 @@ body {
 .result__amount {
   font-size: 26px;
   line-height: 1;
-}
-
-.calculator {
-}
-
-.calculator__enter {
-  font-size: 15px;
-}
-
-.calculator__enter:hover {
-  font-size: 14px;
 }
 
 /* Grid */

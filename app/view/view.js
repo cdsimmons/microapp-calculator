@@ -34,49 +34,49 @@ angular.module('calculator.view', ['ngRoute'])
 		$scope.amount += amount;
 	}
 
+	// Any time the user presses an operator...
+	$scope.operator = function(operator) {
+		if(previousOperator !== '') { // Replacing previous operator
+			$scope.calculations = $scope.calculations.substr(0, $scope.calculations.length-1);
+		} else { // Carrying out the operation against our array of operation methods...
+			total = eval($scope.calculations);
+		}
+
+		// Showing the current total if we press an operator...
+		$scope.amount = total.toString();
+
+		// Storing the previous operator
+		previousOperator = operator;
+		calculated = false;
+
+		$scope.calculations += operator;
+	}
+
 	// Any time the user presses a method...
 	$scope.method = function(method) {
-		// Checking if we're operating
-		if(operators.indexOf(method) >= 0) {
-			if(previousOperator !== '') { // Replacing previous operator
-				$scope.calculations = $scope.calculations.substr(0, $scope.calculations.length-1);
-			} else { // Carrying out the operation against our array of operation methods...
-				total = eval($scope.calculations);
-			}
+		// Clearing
+		if(method == 'clear') { 
+			$scope.amount = '';
+			$scope.calculations = '';
+			total = 0;
+		}
 
-			// Showing the current total if we press an operator...
+		// Finalising
+		if(method == 'enter') {
+			total = eval($scope.calculations);
 			$scope.amount = total.toString();
+			calculated = true;
+		}
 
-			// Storing the previous operator
-			previousOperator = method;
-			calculated = false;
+		// Undoing
+		if(method == 'undo') {
+			$scope.calculations = $scope.calculations.substr(0, $scope.calculations.length-1);
 
-			$scope.calculations += method;
-		} else { // Otherwise, we need to do something special I guess...
-			// Clearing
-			if(method == 'clear') { 
-				$scope.amount = '';
-				$scope.calculations = '';
-				total = 0;
-			}
-
-			// Finalising
-			if(method == 'enter') {
-				total = eval($scope.calculations);
-				$scope.amount = total.toString();
-				calculated = true;
-			}
-
-			// Undoing
-			if(method == 'undo') {
-				$scope.calculations = $scope.calculations.substr(0, $scope.calculations.length-1);
-
-				if(!calculated) {
-					$scope.amount = $scope.amount.substr(0, $scope.amount.length-1);
-				}
+			if(!calculated) {
+				$scope.amount = $scope.amount.substr(0, $scope.amount.length-1);
 			}
 		}
 	}
 
-	// Watch for key presses on numpad...
+	// TODO - Watch for key presses on numpad...
 }]);

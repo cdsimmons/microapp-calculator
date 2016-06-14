@@ -10,9 +10,9 @@
 	</div>
 	<div class="row">
 		<button class="btn" ng-click="method('undo')">&lt;</button>
-		<button class="btn" ng-click="method('/')">/</button>
-		<button class="btn" ng-click="method('*')">*</button>
-		<button class="btn" ng-click="method('-')">-</button>
+		<button class="btn" ng-click="operator('/')">/</button>
+		<button class="btn" ng-click="operator('*')">*</button>
+		<button class="btn" ng-click="operator('-')">-</button>
 	</div>
 	<div class="row">
 		<div class="row">
@@ -20,7 +20,7 @@
 			<button class="btn" ng-click="digit(8)">8</button>
 			<button class="btn" ng-click="digit(9)">9</button>
 		</div>
-		<button class="btn btn--tall" ng-click="method('+')">+</button>
+		<button class="btn btn--tall" ng-click="operator('+')">+</button>
 		<div class="row">
 			<button class="btn" ng-click="digit(4)">4</button>
 			<button class="btn" ng-click="digit(5)">5</button>
