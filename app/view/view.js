@@ -71,7 +71,7 @@ angular.module('calculator.view', ['ngRoute'])
 			if(method == 'undo') {
 				$scope.calculations = $scope.calculations.substr(0, $scope.calculations.length-1);
 
-				if(previousOperator == '') {
+				if(!calculated) {
 					$scope.amount = $scope.amount.substr(0, $scope.amount.length-1);
 				}
 			}
