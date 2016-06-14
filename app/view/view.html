@@ -1,0 +1,42 @@
+
+
+<div class="calculator">
+	<div class="row">
+		<button class="btn" ng-click="method('clear')">C</button>
+		<div class="result">
+			<span class="result__calculations">&nbsp;{{calculations}}</span>
+			<span class="result__amount">&nbsp;{{amount}}</span>
+		</div>
+	</div>
+	<div class="row">
+		<button class="btn" ng-click="method('undo')">&lt;</button>
+		<button class="btn" ng-click="method('/')">/</button>
+		<button class="btn" ng-click="method('*')">*</button>
+		<button class="btn" ng-click="method('-')">-</button>
+	</div>
+	<div class="row">
+		<div class="row">
+			<button class="btn" ng-click="digit(7)">7</button>
+			<button class="btn" ng-click="digit(8)">8</button>
+			<button class="btn" ng-click="digit(9)">9</button>
+		</div>
+		<button class="btn btn--tall" ng-click="method('+')">+</button>
+		<div class="row">
+			<button class="btn" ng-click="digit(4)">4</button>
+			<button class="btn" ng-click="digit(5)">5</button>
+			<button class="btn" ng-click="digit(6)">6</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="row">
+			<button class="btn" ng-click="digit(1)">1</button>
+			<button class="btn" ng-click="digit(2)">2</button>
+			<button class="btn" ng-click="digit(3)">3</button>
+		</div>
+		<button class="btn btn--tall calculator__enter" ng-click="method('enter')">Enter</button>
+		<div class="row">
+			<button class="btn btn--wide" ng-click="digit(0)">0</button>
+			<button class="btn" ng-click="digit('.')">.</button>
+		</div>
+	</div>
+</div>

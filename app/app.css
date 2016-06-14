@@ -1,0 +1,85 @@
+/* Globals */
+body {
+  color: #92a8d1;
+  font-family: Calibri, Helvetica, Arial;
+  background-color: #f7cac9;
+}
+
+/* Buttons */
+.btn {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 1px solid #92a8d1;
+  border-radius: 3px;
+  font-size: 21px;
+  font-weight: 600;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+  float: left;
+  border-width: 2px;
+  background-color: transparent;
+}
+
+.btn:hover {
+  color: #92a8d1;
+  border-width: 3px;
+  font-size: 19px;
+  background-color: white;
+}
+
+.btn--wide {
+  width: 110px;
+}
+
+.btn--tall {
+  height: 110px;
+  position: absolute;
+}
+
+/* Calculator */
+.result {
+  text-align: right;
+  margin: 5px;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #92a8d1;
+  margin-left: 66px;
+}
+
+.result__calculations {
+  font-size: 14px;
+  display: block;
+  line-height: 1;
+}
+
+.result__amount {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.calculator {
+}
+
+.calculator__enter {
+  font-size: 15px;
+}
+
+.calculator__enter:hover {
+  font-size: 14px;
+}
+
+/* Grid */
+.wrapper {
+  width: 240px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.row {
+  clear: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+}
